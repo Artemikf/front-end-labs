@@ -2,7 +2,7 @@
 ___
 ### LABS
 
-***Lab 1*** - 
+***Lab 1*** - https://github.com/Artemikf/front-end-labs/tree/Lab_1
 
 ***Lab 2*** - 
 
