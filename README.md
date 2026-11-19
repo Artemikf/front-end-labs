@@ -8,6 +8,6 @@ ___
 
 ***Lab 3*** - https://github.com/Artemikf/front-end-labs/tree/Lab_3
 
-***Lab 4*** - 
+***Lab 4*** - https://github.com/Artemikf/front-end-labs/tree/Lab_4
 
 ***Lab 5*** - 
