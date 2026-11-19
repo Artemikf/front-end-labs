@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МедКонсалт Онлайн — Зворотній зв'язок</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header class="feedback-header">
+        <div class="brand-top-row">
+            <img src="images/logo.png" alt="Логотип МедКонсалт Онлайн" width="60" height="60">
+            <h1>МедКонсалт Онлайн</h1>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html"><button type="button">На Головну сторінку</button></a>
+            <a href="services.html"><button type="button">Послуги</button></a>
+        </nav>
+    </header>
+
+    <main class="feedback-main">
+        <h2>Форма зворотнього зв'язку</h2>
+
+        <form action="#" method="post" class="feedback-flex-form">
+            <fieldset class="flex-item">
+                <legend>Персональна інформація</legend>
+
+                <p>
+                    <label for="fullname">1. Прізвище та ім'я:</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="Введіть прізвище та ім'я" required>
+                </p>
+
+                <p>
+                    <label for="email">2. E-mail:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </p>
+
+                <p>
+                    <label for="age">3. Вік:</label><br>
+                    <input type="number" id="age" name="age" min="1" max="120" placeholder="Вкажіть ваш вік" required>
+                </p>
+            </fieldset>
+
+            <div class="flex-item">
+                <label for="purpose">4. Мета зворотнього зв'язку:</label><br>
+                <select id="purpose" name="purpose" onchange="handlePurposeChange(this)" required>
+                    <option value="cooperation" selected>співпраця</option>
+                    <option value="quality_complaint">скарга на якість послуги</option>
+                    <option value="suggestion">пропозиція</option>
+                    <option value="site_error">наявність помилки на сайті</option>
+                </select>
+                <p class="purpose-hint"></p>
+            </div>
+
+            <div class="flex-item">
+                <label for="details">5. Детально (максимум 500 символів):</label><br>
+                <div class="details-wrapper">
+                    <textarea id="details" name="details" rows="6" cols="50" maxlength="500" placeholder="Опишіть деталі вашого звернення..." required></textarea>
+                    <span id="details-tooltip" class="details-tooltip"></span>
+                </div>
+            </div>
+
+            <div class="flex-item">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">Я надаю згоду на обробку персональної інформації</label>
+            </div>
+
+            <div class="flex-item--actions">
+                <button type="submit">Надіслати інформацію</button>
+                <button type="reset">Очистити форму</button>
+                <button type="button" onclick="handleQuickHelpClick()">Довідка</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Адреса: м. Київ, вул. Володимирська, 60, офіс 305 | Телефон: +38 (044) 234-56-78</p>
+    </footer>
+
+</body>
+</html>
