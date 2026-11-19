@@ -1,0 +1,279 @@
+/* Зовнішня таблиця стилів: стиль «Мінімалізм» */
+
+:root {
+    --bg-main: rgb(244, 247, 250);
+    --surface: #ffffff;
+    --primary: #1f3a52;
+    --accent: #0b4f6c;
+    --text-main: #222831;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--primary);
+}
+
+header > p {
+    color: #4a5568;
+}
+
+h2 + p {
+    margin-top: 8px;
+}
+
+h2 ~ p {
+    color: #2d3748;
+}
+
+[type="button"] {
+    cursor: pointer;
+    padding: 8px 14px;
+    border: 1px solid var(--primary);
+    background-color: var(--surface);
+    color: var(--primary);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[type="button"]:hover {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+::selection {
+    background-color: #cfe8ff;
+    color: #102a43;
+}
+
+/* --- ГОЛОВНА СТОРІНКА (Варіант 8) --- */
+
+/* Абсолютне позиціонування з 0 відступом зверху */
+.brand-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface);
+    padding: 12px 24px;
+    border-bottom: 1px solid #d9e2ec;
+    z-index: 20;
+}
+
+.home-main {
+    position: relative;
+    top: 130px;
+    padding-bottom: 150px;
+    z-index: 5;
+}
+
+/* Менші зовнішні відступи (margin), ніж внутрішні (padding) */
+.goal-box {
+    margin: 12px 16px;
+    padding: 28px 32px;
+    background-color: var(--surface);
+    border: 1px solid #d9e2ec;
+    border-radius: 6px;
+}
+
+/* Перша літера тексту опису мети: тінь та світло-фіолетовий колір */
+.goal-lead::first-letter {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: hsl(265, 85%, 72%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+    padding-right: 4px;
+}
+
+/* Смуга прокручування у блоці з великим текстовим контентом */
+.scrollable-text {
+    max-height: 160px;
+    overflow-y: auto;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e0;
+    background-color: rgb(250, 252, 255);
+}
+
+.scrollable-text p::first-line {
+    font-style: italic;
+}
+
+/* При наведенні курсора блок таблиці зміщується на 5px ліворуч та вниз */
+#management-table {
+    margin: 24px 16px;
+    padding: 20px;
+    background-color: var(--surface);
+    border: 1px solid #d9e2ec;
+    transition: transform 0.3s ease;
+}
+
+#management-table:hover {
+    transform: translate(-5px, 5px);
+}
+
+/* При наведенні курсора на адресу та телефони через 2 сек шрифт стає червоним напівжирним */
+.contacts-box {
+    margin: 16px;
+    padding: 16px;
+    background-color: var(--surface);
+    transition: color 0.3s ease 2s, font-weight 0.3s ease 2s;
+}
+
+.contacts-box:hover {
+    color: crimson;
+    font-weight: bold;
+}
+
+.home-footer {
+    position: relative;
+    top: 130px;
+    padding: 20px 24px;
+    background-color: #e2e8f0;
+    z-index: 10;
+}
+
+/* --- СТОРІНКА «ПОСЛУГИ» (Варіант 8 + Grid Layout) --- */
+
+.sticky-brand-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface);
+    padding: 10px 24px;
+    border-bottom: 1px solid #cbd5e0;
+    z-index: 100;
+}
+
+.services-main {
+    margin-top: 135px;
+    padding: 20px 24px;
+}
+
+/* Grid-контейнер */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Grid-елемент: рамка темно-голубого кольору, верхня суцільна тонка, решта крапкові */
+.service-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 10px;
+    padding: 16px;
+    background-color: var(--surface);
+    border-top: 1px solid #0b4f6c;
+    border-right: 2px dotted #0b4f6c;
+    border-bottom: 2px dotted #0b4f6c;
+    border-left: 2px dotted #0b4f6c;
+    border-radius: 4px;
+}
+
+.service-card--featured {
+    grid-column: span 1;
+}
+
+.service-card p {
+    margin: 0;
+}
+
+/* Текст «вартість послуги»: більша вага, висота шрифту та похилий */
+.service-price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #0b4f6c;
+}
+
+@keyframes negativeEffect {
+    0% {
+        filter: invert(0%);
+    }
+    100% {
+        filter: invert(100%);
+    }
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Анімація до «негативу» при наведенні курсора */
+.service-card img:hover {
+    animation-name: negativeEffect;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+/* Непосещённые посилання на сторінці «Послуги» — світло-зелений колір */
+.services-main a:link {
+    color: #4caf50;
+}
+
+/* --- СТОРІНКА «ЗВОРОТНІЙ ЗВ'ЯЗОК» (Flex Layout) --- */
+
+.feedback-header {
+    padding: 16px 24px;
+    background-color: var(--surface);
+    border-bottom: 1px solid #d9e2ec;
+}
+
+.feedback-main {
+    padding: 24px;
+}
+
+/* Flex-контейнер */
+.feedback-flex-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--surface);
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+}
+
+/* Flex-елементи */
+.flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    order: 1;
+}
+
+.flex-item--actions {
+    display: flex;
+    gap: 12px;
+    order: 2;
+    align-self: flex-start;
+}
+
+.flex-item input::placeholder,
+.flex-item textarea::placeholder {
+    color: #718096;
+    font-style: italic;
+}
