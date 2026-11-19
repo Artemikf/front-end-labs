@@ -4,7 +4,7 @@ ___
 
 ***Lab 1*** - https://github.com/Artemikf/front-end-labs/tree/Lab_1
 
-***Lab 2*** - 
+***Lab 2*** - https://github.com/Artemikf/front-end-labs/tree/Lab_2
 
 ***Lab 3*** - 
 
